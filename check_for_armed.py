@@ -1,6 +1,12 @@
 # Needs testing to verify that this is actually working as expected, at this time it appears to work.
 # Cycles through tracks in project and returns true if it finds any tracks with record armed turned on, otherwise returns false
 
+def fn_bits(n):
+    while n:
+        b = n & (~n+1)
+        yield b
+        n ^= b
+
 def track_states(trck):
     status = {
         'hide from mcp': False,
